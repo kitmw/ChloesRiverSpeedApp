@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Chloe\'s River Speed Recorder</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Enter Data</string>
+    <string name="second_fragment_label">Graph</string>
+    <string name="next">View Graph</string>
+    <string name="previous">Back to data entry</string>
+
+    <string name="hello_first_fragment">Enter some juicy data</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="confirm_button_text">Confirm</string>
+    <string name="string_rainfall">Upstream river height (m)</string>
+    <string name="string_tide_height">Tide height (m)</string>
+    <string name="string_river_speed">River speed (m/s)</string>
+    <string name="string_data_entered">Data Entered</string>
+</resources>

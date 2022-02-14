@@ -47,45 +47,44 @@
 
     <EditText
         android:id="@+id/editTextRiverSpeed"
-        android:layout_width="wrap_content"
+        android:layout_width="268dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
         android:ems="10"
+        android:hint="@string/string_river_speed"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
-        android:hint="@string/string_river_speed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.251"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textview_first" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTimeTo50" />
 
     <EditText
         android:id="@+id/editTextTideHeight"
-        android:layout_width="wrap_content"
+        android:layout_width="268dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:ems="10"
+        android:hint="@string/string_tide_height"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
-        android:hint="@string/string_tide_height"
-        app:layout_constraintBottom_toTopOf="@+id/editTextUpRiverHeight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextRiverSpeed" />
 
     <EditText
         android:id="@+id/editTextUpRiverHeight"
-        android:layout_width="wrap_content"
+        android:layout_width="268dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="@string/string_rainfall"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNotes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTideHeight" />
 
     <View
         android:id="@+id/divider"
@@ -97,17 +96,66 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextNotes"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="Notes"
+        android:inputType="textAutoCorrect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUpRiverHeight" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/updateTideHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:ems="10"
-        android:inputType="textAutoCorrect"
-        android:hint="Notes"
-        app:layout_constraintBottom_toTopOf="@+id/button_first"
+        android:clickable="true"
+        android:src="@android:drawable/stat_notify_sync"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTideHeight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/editTextTideHeight"
+        app:layout_constraintTop_toTopOf="@+id/editTextTideHeight" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/updateRiverHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@android:drawable/stat_notify_sync"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextUpRiverHeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextUpRiverHeight"
+        app:layout_constraintTop_toTopOf="@+id/editTextUpRiverHeight" />
+
+    <EditText
+        android:id="@+id/editTextTimeTo50"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:hint="Time to 50m (s)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_first" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/startTimerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@android:drawable/ic_lock_idle_alarm"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextRiverSpeed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextTimeTo50"
+        app:layout_constraintTop_toTopOf="@+id/editTextTimeTo50" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

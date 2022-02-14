@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +16,11 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.chloesriverspeedrecorder.databinding.FragmentFirstBinding;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,7 +30,6 @@ import java.util.Map;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
-//    private SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
     private SharedPreferences sharedPref;
 
     @Override
@@ -42,6 +47,17 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        view.findViewById(R.id.startTimerButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(((MainActivity) getActivity()).checkTimerRunning()){
+                    //timer is running
+                    ((MainActivity) getActivity()).stopTimerTask(view);
+                } else{
+                    ((MainActivity) getActivity()).startTimer(view);
+                }
+            }
+        });
 
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +98,13 @@ public class FirstFragment extends Fragment {
             }
         });
 
+    }
+
+    @Override
+    public void onResume() {
+        ((MainActivity) getActivity()).setRiverScraperListener();
+        ((MainActivity) getActivity()).setTideScraperListener();
+        super.onResume();
     }
 
     @Override

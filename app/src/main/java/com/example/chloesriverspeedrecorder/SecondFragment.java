@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.chloesriverspeedrecorder.databinding.FragmentSecondBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,11 +88,6 @@ public class SecondFragment extends Fragment {
     private void drawTable(View view){
         LinearLayout dataLayout = view.getRootView().findViewById(R.id.dataView);
         dataLayout.removeAllViews();
-//        int numKids = dataLayout.getChildCount();
-//        for(int i=1;i<numKids;i++){
-//            View thisText = dataLayout.getChildAt(i);
-//            thisText.setVisibility(View.GONE);
-//        }
 
         Map<String, ?> allEntries = sharedPref.getAll();
         List<String> keyList = new ArrayList<String>();

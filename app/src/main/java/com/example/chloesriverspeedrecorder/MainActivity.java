@@ -260,7 +260,8 @@ public class MainActivity extends AppCompatActivity {
                         String[] amOrPmArray = tideTimeString.split("\\d+");
                         String amOrPm = amOrPmArray[2];
                         int hoursToAdd = 0;
-                        if(Objects.equals(amOrPm,"pm</td>")) {
+                        if(Objects.equals(amOrPm,"pm</td>")&& !(Objects.equals(tideHour12,12))) {
+                            // add 12 hours to get 24 hour clock if pm (unless 12pm)
                             hoursToAdd = 12;
                         }
                         int tideHour24 = tideHour12+hoursToAdd;
